@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LUSH Homepage</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #000; /* 어두운 배경 */
+      color: #fff;
+      font-family: 'Arial', sans-serif;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+    }
+
+    .hero {
+      text-align: center;
+    }
+
+    .typewriter-text {
+      font-size: 2rem;
+      border-right: 2px solid #fff;
+      white-space: nowrap;
+      overflow: hidden;
+      width: fit-content;
+      animation: blink 0.8s steps(1) infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { border-color: transparent; }
+      50% { border-color: #fff; }
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <h1 class="typewriter-text" id="typewriter"></h1>
+  </div>
+
+  <script>
+    const text = "Recharge Your Skin, Refresh Your Mind";
+    const speed = 80; // 한 글자 출력 간격(ms)
+    let i = 0;
+
+    function typeWriter() {
+      if (i < text.length) {
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    window.onload = typeWriter;
+  </script>
+</body>
+</html>
