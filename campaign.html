@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>Scroll by Letter</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    section {
+      height: 200vh; /* 스크롤 여유 있게 */
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: white;
+    }
+
+    .text-container {
+      font-size: 3rem;
+      font-weight: bold;
+      white-space: pre-wrap;
+    }
+
+    .text-container span {
+      color: #ddd;
+      transition: color 0.3s ease;
+    }
+
+    .text-container span.active {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <section>
+    <div class="text-container" id="animatedText"></div>
+  </section>
+
+  <script>
+    const text = "Together with pdsfdsf;dkf;sdjfldjfldfldkjfldkjfljdlskflkdsjflkdjflkdjlkdlkfndlsfleople.";
+    const container = document.getElementById("animatedText");
+
+    // 텍스트를 한 글자씩 span으로 감싸기
+    text.split('').forEach(char => {
+      const span = document.createElement('span');
+      span.textContent = char;
+      container.appendChild(span);
+    });
+
+    const spans = container.querySelectorAll('span');
+    const totalLetters = spans.length;
+
+    window.addEventListener('scroll', () => {
+      // 현재 스크롤 진행도 계산 (0 ~ 1 사이 비율)
+      const scrollTop = window.scrollY;
+      const maxScroll = document.body.scrollHeight - window.innerHeight;
+      const scrollRatio = scrollTop / maxScroll;
+
+      // 현재 글자 수에 비례한 index 계산
+      const activeCount = Math.floor(scrollRatio * totalLetters);
+
+      // 글자 색 업데이트
+      spans.forEach((span, index) => {
+        if (index <= activeCount) {
+          span.classList.add('active');
+        } else {
+          span.classList.remove('active');
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
