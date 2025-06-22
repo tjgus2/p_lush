@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>향기별 제품 추천</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 40px;
+      background: #f8f8f8;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .tabs {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 30px;
+    }
+
+    .tab-btn {
+      padding: 10px 16px;
+      border: none;
+      border-radius: 20px;
+      background-color: #eee;
+      cursor: pointer;
+      transition: 0.2s;
+    }
+
+    .tab-btn.active {
+      background-color: #ff5c8a;
+      color: white;
+      font-weight: bold;
+    }
+
+    .tab-content {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .product {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+      gap: 20px;
+    }
+
+    .product img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    .product-info {
+      text-align: left;
+    }
+
+    .product-info h4 {
+      margin: 5px 0;
+    }
+
+    .product-info p {
+      margin: 5px 0;
+      color: #555;
+    }
+
+    .buy-btn {
+      padding: 10px 16px;
+      background: #ccc;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h2>향기별 제품 추천</h2>
+
+  <div class="tabs">
+    <button class="tab-btn active" data-tab="rose">Rose Jam</button>
+    <button class="tab-btn" data-tab="sleepy">Sleepy</button>
+    <button class="tab-btn" data-tab="honey">Honey I Washed the Kids</button>
+    <button class="tab-btn" data-tab="olive">The Olive Branch</button>
+    <button class="tab-btn" data-tab="inter">Intergalactic</button>
+    <button class="tab-btn" data-tab="dirty">Dirty</button>
+  </div>
+
+  <div id="rose" class="tab-content active">
+    <div class="product">
+      <img src="https://via.placeholder.com/120?text=비버블" alt="비버블">
+      <div class="product-info">
+        <h4>로즈 잼 비버블 100g - 버블바 / 입욕제</h4>
+        <p>달콤한 장미향의 리치한 로즈잼 향</p>
+        <strong>17,000원</strong><br>
+        <button class="buy-btn">구매하러 가기</button>
+      </div>
+    </div>
+    <div class="product">
+      <img src="https://via.placeholder.com/120?text=샤워젤" alt="샤워젤">
+      <div class="product-info">
+        <h4>로즈 잼 100g - 샤워젤 / 바디워시</h4>
+        <p>기분 좋은 향기가 퍼지며 달콤한 샤워 타임</p>
+        <strong>20,000원</strong><br>
+        <button class="buy-btn">구매하러 가기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="sleepy" class="tab-content">
+    <div class="product">
+      <img src="https://via.placeholder.com/120?text=슬리피" alt="슬리피">
+      <div class="product-info">
+        <h4>슬리피 보디로션 100g</h4>
+        <p>편안한 라벤더 향으로 밤을 준비하세요</p>
+        <strong>18,000원</strong><br>
+        <button class="buy-btn">구매하러 가기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="honey" class="tab-content">
+    <div class="product">
+      <img src="https://via.placeholder.com/120?text=허니키즈" alt="허니키즈">
+      <div class="product-info">
+        <h4>허니 키즈 샤워젤 100g</h4>
+        <p>달콤한 꿀과 오렌지 향으로 활기찬 아침!</p>
+        <strong>19,000원</strong><br>
+        <button class="buy-btn">구매하러 가기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="olive" class="tab-content">
+    <div class="product">
+      <img src="https://via.placeholder.com/120?text=올리브" alt="올리브">
+      <div class="product-info">
+        <h4>더 올리브 브랜치 샤워젤</h4>
+        <p>지중해 감성을 담은 부드러운 향</p>
+        <strong>21,000원</strong><br>
+        <button class="buy-btn">구매하러 가기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="inter" class="tab-content">
+    <div class="product">
+      <img src="https://via.placeholder.com/120?text=배쓰밤" alt="배쓰밤">
+      <div class="product-info">
+        <h4>인터갤럭틱 배쓰밤</h4>
+        <p>우주를 담은 듯한 반짝이는 입욕제</p>
+        <strong>16,000원</strong><br>
+        <button class="buy-btn">구매하러 가기</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="dirty" class="tab-content">
+    <div class="product">
+      <img src="https://via.placeholder.com/120?text=더티" alt="더티">
+      <div class="product-info">
+        <h4>더티 보디 스프레이</h4>
+        <p>멘톨 향으로 상쾌한 하루를!</p>
+        <strong>25,000원</strong><br>
+        <button class="buy-btn">구매하러 가기</button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const tabButtons = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        // 모든 버튼, 콘텐츠 초기화
+        tabButtons.forEach(b => b.classList.remove('active'));
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        // 현재 선택된 것만 표시
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

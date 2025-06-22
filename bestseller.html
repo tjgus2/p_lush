@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Bestseller Scroll</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: sans-serif;
+      background: #fff;
+      text-align: center;
+      overflow-x: hidden;
+    }
+
+    h2 {
+      margin-top: 40px;
+      font-size: 32px;
+    }
+
+    p {
+      margin-bottom: 30px;
+    }
+
+    .slider-wrapper {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+    }
+
+    .slider {
+      display: flex;
+      gap: 40px;
+      animation: scroll 30s linear infinite;
+    }
+
+    .slide {
+      position: relative;
+      flex: 0 0 auto;
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      font-size: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: 0.3s ease;
+    }
+
+    .slide:hover .overlay {
+      opacity: 1;
+    }
+
+    @keyframes scroll {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* 두 번 반복해서 무한스크롤처럼 보이게 */
+    .slider-content {
+      display: flex;
+    }
+  </style>
+</head>
+<body>
+  <h2>Bestseller</h2>
+  <p>We are changing the world we live in for the better.</p>
+
+  <div class="slider-wrapper">
+    <div class="slider">
+      <div class="slider-content">
+        <!-- 한 세트 -->
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">1</div></div>
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">2</div></div>
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">3</div></div>
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">4</div></div>
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">5</div></div>
+        <!-- 반복용 복제 -->
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">1</div></div>
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">2</div></div>
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">3</div></div>
+        <div class="slide"><img src="https://via.placeholder.com/200" alt=""><div class="overlay">4</div></div>
+        <div class="slide"><img src="htt
